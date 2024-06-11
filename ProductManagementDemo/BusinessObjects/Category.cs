@@ -9,7 +9,7 @@
         public Category(int catID, string catName)
         {
             this.CategoryId = catID;
-            this.CategoryName catName;
+            this.CategoryName = catName;
         }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
