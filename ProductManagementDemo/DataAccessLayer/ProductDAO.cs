@@ -12,36 +12,46 @@ namespace DataAccessLayer
     public class ProductDAO
     {
         private static List<Product> listProducts;
-        public ProductDAO()
+
+         static ProductDAO()
         {
-            Product chai = new Product(1, "Chai", 3, 12, 18);
-            Product chang = new Product(2, "Chang", 1, 23, 19);
-            Product aniseed = new Product(3, "Aniseed Syrup", 2, 23, 10);
-            listProducts = new List<Product> { chai, chang, aniseed };
-            //Product chef new Product (4, "Chef Anton's Cajun Seasoning", 2, 34, 22); 
-            //Product chefMix new Product (5, "Chef Anton's Gumbo Mix", 2, 45, 34);
-            //Product grandma new Product (6, "Grandma's Boysenberry Spread", 2, 21, 25);
-            //Product uncle = new Product(7, "Uncle Bob's Organic Dried Pears", 7, 22, 30);
-            //Product northwoods new Product (8, "Northwoods Cranberry Sauce", 2, 10, 40);
-            //Product mishi new Product(9, "Mishi Kobe Niku", 6, 12, 97);
-            //Product ikura new Product(10, "Ikura", 8, 13, 32);
-            // listProducts = new List<Product> { chai, chang, aniseed, chef, chefMix, grandma
+            listProducts = new List<Product>();
+
+            Product p1 = new Product(1, "Chai", 3, 12, 18);
+            Product p2 = new Product(2, "Chang", 1, 23, 19);
+            Product p3 = new Product(3, "Aniseed Syrup", 2, 23, 10);
+            Product p4 = new Product(4, "Chef Anton's Cajun Seasoning", 2, 34, 22);
+            Product p5 = new Product(5, "Chef Anton's Gumbo Mix", 2, 45, 34);
+            Product p6 = new Product(6, "Grandma's Boysenberry Spread", 2, 21, 25);
+            Product p7 = new Product(7, "Uncle Bob's Organic Dried Pears", 7, 22, 30);
+            Product p8 = new Product(8, "Northwoods Cranberry Sauce", 2, 10, 40);
+            Product p9 = new Product(9, "Mishi Kobe Niku", 6, 12, 97);
+            Product p10 = new Product(10, "Ikura", 8, 13, 32);
+
+            listProducts.AddRange(new[] { p1, p2, p3, p4, p5, p6, p7, p8, p9, p10 });
         }
+
         public static List<Product> GetProducts()
         {
+
             return listProducts;
         }
-        /*public static List<Product> GetProducts()
-        {
-            var listProducts = new List<Product>();
-            try
-            {
-                using var db new MyStoreContext(); listProducts db. Products.ToList();
-            }
-            catch (Exception e) { }
-            
-            return listProducts;
-        }*/
+
+        //public static List<Product> GetProducts()
+        //{
+        //    var list = new List<Product>(); 
+
+        //    try
+        //    {
+        //        list = _products; 
+        //    }
+        //    catch (ArgumentException ex)
+        //    {
+        //        throw; // Ném lại ngoại lệ gốc
+        //    }
+
+        //    return list;
+        //}
 
         public static void SaveProduct(Product p)
         {

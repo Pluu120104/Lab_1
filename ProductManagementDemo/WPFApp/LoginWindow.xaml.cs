@@ -41,7 +41,7 @@ namespace WPFApp
             }
             else
             {
-                MessageBox.Show("You are not permission (");
+                MessageBox.Show("You are not permission ");
             }
         }
         

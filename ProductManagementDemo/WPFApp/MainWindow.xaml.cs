@@ -52,7 +52,7 @@ namespace WPFApp
             }
             catch (Exception ex)
             {
-                // MessageBox.Show(ex.Message, "Error on load list of products");
+                throw new Exception(ex.Message);
             }
             finally
             {
@@ -92,6 +92,7 @@ namespace WPFApp
             DataGridCell RowColumn =
             dataGrid.Columns[0].GetCellContent(row).Parent as DataGridCell;
             string id = ((TextBlock) RowColumn.Content).Text;
+
             Product product = iProductService.GetProductById(Int32.Parse(id)); 
             txtProductID.Text = product.ProductId.ToString();
             txtProductName.Text = product.ProductName;
